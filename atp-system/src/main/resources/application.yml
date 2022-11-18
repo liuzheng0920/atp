@@ -1,0 +1,7 @@
+server:
+  port: 28080
+  servlet:
+    context-path: '/atp-system'
+spring:
+  application:
+    name: atp-system
