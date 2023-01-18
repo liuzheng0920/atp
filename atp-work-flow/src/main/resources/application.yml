@@ -1,0 +1,7 @@
+server:
+  port: 27080
+  servlet:
+    context-path: '/atp-work-flow'
+spring:
+  application:
+    name: atp-work-flow

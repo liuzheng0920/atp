@@ -5,6 +5,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>atp-system</module>
+    <module>atp-work-flow</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
