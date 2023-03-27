@@ -35,12 +35,9 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private TaskService taskService;
     @Override
-    public ResponseResult startFlow() {
+    public void startFlow() {
         Map<String,Object> param = new HashMap<>();
         param.put("userId","admin");
         param.put("order","1");
-        
-        ProcessInstance processInstance = runtimeService.startProcessInstanceById("hello", param);
-        return null;
     }
 }

@@ -5,6 +5,8 @@
  *******************************************************************************/
 package com.lwlve.atp.common.entity;
 
+import com.lwlve.atp.common.emum.ResponseCode;
+import com.lwlve.atp.common.emum.SystemResponseCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,11 +19,35 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ResponseResult {
+public class ResponseResult<T> {
     
-    private short code;
+    private String code;
     
-    private String msg;
+    private String message;
     
-    private Object data;
+    private T data;
+    
+    public ResponseResult (){}
+    
+    public ResponseResult(ResponseCode responseCode){
+        this.setCode(responseCode.getCode());
+        this.setMessage(responseCode.getMessage());
+    }
+    
+    public static <T> ResponseResult<T> success(T data){
+        return build(SystemResponseCode.SUCCESS,data);
+    }
+    
+    public static <T> ResponseResult<T> fail(ResponseCode responseCode){
+        return new ResponseResult<>(responseCode);
+    }
+    
+    public static <T> ResponseResult<T> build(ResponseCode responseCode,T data){
+        ResponseResult<T> result = new ResponseResult<>();
+        result.setCode(responseCode.getCode());
+        result.setMessage(responseCode.getMessage());
+        result.setData(data);
+        return result;
+    }
+   
 }

@@ -15,6 +15,6 @@ import com.lwlve.atp.common.entity.ResponseResult;
  */
 public interface DemoService {
     
-    ResponseResult startFlow();
+    void startFlow();
     
 }
