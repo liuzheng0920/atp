@@ -6,6 +6,7 @@
   <modules>
     <module>atp-system</module>
     <module>atp-work-flow</module>
+    <module>atp-core</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -42,6 +43,16 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.2.8</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
     </dependency>
   </dependencies>
   
