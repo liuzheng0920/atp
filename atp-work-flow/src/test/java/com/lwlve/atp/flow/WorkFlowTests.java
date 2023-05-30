@@ -6,7 +6,6 @@
 package com.lwlve.atp.flow;
 
 import com.lwlve.atp.AtpWorkFlowApplication;
-import liquibase.pro.packaged.A;
 import lombok.extern.slf4j.Slf4j;
 import org.flowable.engine.HistoryService;
 import org.flowable.engine.RepositoryService;
@@ -15,7 +14,6 @@ import org.flowable.engine.TaskService;
 import org.flowable.engine.history.HistoricDetail;
 import org.flowable.engine.runtime.ProcessInstance;
 import org.flowable.task.api.Task;
-import org.flowable.task.api.TaskQuery;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

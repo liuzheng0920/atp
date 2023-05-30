@@ -1,7 +1,7 @@
 server:
   port: 28080
   servlet:
-    context-path: '/atp-system'
+    context-path: '/atp-core'
 spring:
   application:
     name: atp-core
