@@ -1,22 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Sider from "./sider/Index.vue";
+import Content from './content/Index.vue';
+</script>
 
 <template>
-  <n-layout class="layout">
-    <n-layout-header>颐和园路</n-layout-header>
-    <n-layout has-sider>
-      <n-layout-sider content-style="padding: 24px;"> 海淀桥 </n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">
-        平山道
-      </n-layout-content>
+  <n-layout class="layout-main">
+    <n-layout-header class="layout-header">后台管理系统</n-layout-header>
+    <n-layout has-sider class="layout-center">
+      <Sider />
+      <Content />
     </n-layout>
-    <n-layout-footer>成府路</n-layout-footer>
   </n-layout>
 </template>
 
 <style scoped>
-.layout {
-  display: flex;
-  height: 1vh;
-  width: 100%;
+.layout-main {
+}
+
+.layout-header {
+  height: var(--header-height);
+}
+.layout-center {
+  height: calc(100% - var(--header-height));
 }
 </style>
