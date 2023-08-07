@@ -1,6 +1,8 @@
 package com.lwlve.atp.config;
 
 import com.lwlve.atp.common.constant.MqConstants;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Bean;
@@ -32,5 +34,14 @@ public class RabbitMqConfig {
     }
 
 
+    @Bean
+    public Binding bindingDemoTopicExchangeWithDemo1Queue(){
+        return BindingBuilder.bind(demo1Queue()).to(demoTopicExchange()).with(MqConstants.DEMO_ROUTE_KEY_DEMO1);
+    }
+
+    @Bean
+    public Binding bindingDemoTopicExchangeWithDemo2Queue(){
+        return BindingBuilder.bind(demo2Queue()).to(demoTopicExchange()).with(MqConstants.DEMO_ROUTE_KEY_DEMO2);
+    }
 
 }
