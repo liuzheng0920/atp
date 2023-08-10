@@ -3,10 +3,10 @@ spring:
       url: 'jdbc:mysql://127.0.0.1:3306/atp?characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true'
       username: root
       password: 123456
-  rabbitmq:
-    #是否启动
-    #enable: false
-    host: 127.0.0.1
-    port: 5672
-    username: admin
-    password: 123456
+#  rabbitmq:
+#    #是否启动
+#    #enable: false
+#    host: 127.0.0.1
+#    port: 5672
+#    username: admin
+#    password: 123456
