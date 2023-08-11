@@ -5,15 +5,10 @@ import type { Component } from "vue";
 import { NIcon } from "naive-ui";
 import type { MenuOption } from "naive-ui";
 import { BookOutline as BookIcon } from "@vicons/ionicons5";
-import axios from "axios";
 
 function renderIcon(icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) });
 }
-
-axios.get("/api/menuList").then((res) => {
-  console.log(res);
-});
 
 const collapsed = ref<boolean>(true);
 const activeKey = ref<string>("");
@@ -26,6 +21,11 @@ const menuOptions: MenuOption[] = [
   {
     label: "系统管理",
     key: "2",
+    icon: renderIcon(BookIcon),
+  },
+  {
+    label: "流程管理",
+    key: "3",
     icon: renderIcon(BookIcon),
   },
 ];
