@@ -33,3 +33,6 @@ build/
 .vscode/
 
 **/resources/config/*.yml
+
+
+components.d.ts
