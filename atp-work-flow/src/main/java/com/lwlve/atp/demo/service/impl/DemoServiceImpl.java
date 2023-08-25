@@ -5,12 +5,10 @@
  *******************************************************************************/
 package com.lwlve.atp.demo.service.impl;
 
-import com.lwlve.atp.common.entity.ResponseResult;
 import com.lwlve.atp.demo.service.DemoService;
-import org.flowable.engine.RepositoryService;
-import org.flowable.engine.RuntimeService;
-import org.flowable.engine.TaskService;
-import org.flowable.engine.runtime.ProcessInstance;
+import org.camunda.bpm.engine.RepositoryService;
+import org.camunda.bpm.engine.RuntimeService;
+import org.camunda.bpm.engine.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,8 +34,5 @@ public class DemoServiceImpl implements DemoService {
     private TaskService taskService;
     @Override
     public void startFlow() {
-        Map<String,Object> param = new HashMap<>();
-        param.put("userId","admin");
-        param.put("order","1");
     }
 }

@@ -43,4 +43,14 @@ public class DemoTemplateTests {
         String templateContext = demoTemplate.getTemplateContext(header, datas);
         log.info(templateContext);
     }
+
+
+    @Test
+    public void strTest(){
+        String str = "1101010604T2023020800001";
+
+        String t = str.substring(str.indexOf("T"));
+        log.info(t);
+        log.info(str.substring(0,str.indexOf("T")));
+    }
 }

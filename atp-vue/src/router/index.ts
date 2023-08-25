@@ -8,7 +8,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      children: [
+        {
+          path: '/',
+          name: 'bpmn',
+          component: () => import('@/components/bpmn/BpmnHome.vue')
+        }
+      ]
     }
     // {
     //   path: '/about',
