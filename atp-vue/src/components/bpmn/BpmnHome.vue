@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import BpmnViewer from 'bpmn-js'
-
-const bpmnViewer = new BpmnViewer({
-  container: '#canvas',
-  moddleExtensions:{
-
-  }
-})
+import Designer from '@/components/bpmn/designer/Designer.vue'
 </script>
 
 <template>
-  <div id="canvas"></div>
+  <designer class="main-designer"></designer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main-designer {
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  .designer {
+    flex: 1;
+  }
+}
+</style>

@@ -8,7 +8,7 @@ import { RouterView } from 'vue-router'
     <layout-sider />
     <a-layout>
       <a-layout-header class="layout-header"> 面包屑 </a-layout-header>
-      <a-layout-content> <RouterView /> </a-layout-content>
+      <a-layout-content class="layout-content"> <RouterView /> </a-layout-content>
     </a-layout>
   </a-layout>
 </template>
@@ -21,5 +21,9 @@ import { RouterView } from 'vue-router'
 
 .layout-header {
   background-color: #ffffff;
+}
+.layout-content{
+  flex: 1;
+  display: flex;
 }
 </style>
