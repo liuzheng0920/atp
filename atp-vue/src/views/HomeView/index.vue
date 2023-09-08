@@ -1,6 +1,11 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
-  <main>home</main>
+  <h1>主页</h1>
 </template>
+
+<style scoped>
+
+</style>

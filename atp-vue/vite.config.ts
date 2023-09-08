@@ -4,6 +4,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { viteMockServe } from 'vite-plugin-mock'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,17 +13,23 @@ export default defineConfig({
     vue(),
     vueJsx(),
     viteMockServe({
-      mockPath: 'mock',
-      enable: true,
+      mockPath: 'mock'
     }),
+    Components({
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false // css in js
+        })
+      ]
+    })
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  css:{
-    preprocessorOptions:{
+  css: {
+    preprocessorOptions: {
       scss: {
         javascriptEnabled: true,
         additionalData: '@import "./src/styles/variable.scss";'
