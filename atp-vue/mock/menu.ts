@@ -15,13 +15,21 @@ export default [
             component:"Layout",
             redirect:"/layout/home",
             title:"基础布局",
+            hidden:true,
             children:[
               {
                 id:"@guid",
                 path:"/layout/home",
                 title:"主页",
                 component:"/HomeView/index",
-                icon:""
+                icon:"AppstoreOutlined"
+              },
+              {
+                id:"@guid",
+                path:"/layout/bpmn",
+                title:"Bpmn流程设计",
+                component:"/BpmnView/index",
+                icon:"ClusterOutlined"
               }
             ]
           }

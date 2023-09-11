@@ -12,5 +12,6 @@ export interface BaseMenuInfo{
 }
 
 export type MenuStore = {
-  menuInfos:BaseMenuInfo[]
+  menuInfos:BaseMenuInfo[] | undefined;
+  menuId:string | undefined;
 }

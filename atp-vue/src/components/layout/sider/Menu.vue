@@ -1,10 +1,13 @@
 <template>
+  <div id="menuLogo" class="menu-logo">
+    <span v-show="!collapsed">通用后台</span>
+  </div>
   <a-menu>
     <menu-item :router="item" v-for="item in menuRouter" :key="item.id"></menu-item>
   </a-menu>
 </template>
 <script lang="ts">
-  import {defineComponent} from "vue";
+import {defineComponent, toRef} from "vue";
   import MenuItem from "@/components/layout/sider/MenuItem";
   import useMenuStores from '@/stores/system/menu'
 
@@ -12,7 +15,6 @@
    components: {MenuItem},
 
    setup(){
-     console.log(11223344)
     const menuStores = useMenuStores()
 
      return {menuStores}
@@ -31,6 +33,14 @@
  })
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .menu-logo{
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 </style>

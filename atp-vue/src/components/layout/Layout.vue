@@ -14,7 +14,7 @@ const collapsed = ref<boolean>(false)
       :trigger="null"
       collapsible
     >
-      <layout-menu collapsed></layout-menu>
+      <layout-menu :collapsed="collapsed"></layout-menu>
     </a-layout-sider>
 
     <a-layout>
