@@ -13,7 +13,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["antd"],
-    "noEmit": true
+    "types": ["antd","sass"],
+    "noEmit": true,
+    "suppressImplicitAnyIndexErrors": true
   }
 }

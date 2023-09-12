@@ -1,5 +1,6 @@
 import { MockMethod } from 'vite-plugin-mock'
 import {BaseMenuInfo} from "../src/types/system/MenuVo";
+import {BaseResponse} from "../src/types/public/BaseVo";
 export default [
   {
     url:'/apt-system/menuInfo',
@@ -34,7 +35,7 @@ export default [
             ]
           }
         ] as BaseMenuInfo[]
-      }
+      } as BaseResponse<BaseMenuInfo[]>
     }
   }
 

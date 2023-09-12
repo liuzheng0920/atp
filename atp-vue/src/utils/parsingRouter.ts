@@ -30,7 +30,7 @@ export function generatorRouter(
       children: [],
       redirect: undefined
     }
-
+    console.info(parentRoute)
     item.redirect && (routeRecordRaw.redirect = item.redirect)
 
     if (item.children && item.children.length > 0) {

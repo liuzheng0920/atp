@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import layoutMenu from '@/components/layout/sider/Menu.vue'
-import {MenuUnfoldOutlined,MenuFoldOutlined} from '@ant-design/icons-vue'
-console.info(12345)
+import layoutMenu from '@/components/layout/sider/MenuInfo.vue'
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
 const collapsed = ref<boolean>(false)
 </script>
 
@@ -30,7 +29,7 @@ const collapsed = ref<boolean>(false)
         </a-breadcrumb>
       </a-layout-header>
       <a-layout-content class="a-layout-content-custom">
-        <router-view/>
+        <router-view />
       </a-layout-content>
     </a-layout>
   </a-layout>

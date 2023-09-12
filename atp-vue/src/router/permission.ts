@@ -7,7 +7,7 @@ export const permission = (router:Router) => {
 
     console.log(to)
     const store = menuStore()
-    if(store.$state.menuInfos.length == 0){
+    if(store.$state.menuInfos?.length == 0){
       store.initMenuInfos().then(routers => {
         console.log(routers);
         routers.forEach(item => router.addRoute(item))

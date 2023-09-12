@@ -16,9 +16,12 @@
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "4.x",
     "axios": "^1.5.0",
+    "bpmn-js": "^14.0.0",
+    "diagram-js": "^12.3.0",
     "pinia": "^2.1.6",
     "reset.scss": "^1.0.0",
     "vue": "^3.3.4",
+    "vue-i18n": "^9.3.0",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {

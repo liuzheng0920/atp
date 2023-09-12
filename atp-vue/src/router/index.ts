@@ -7,8 +7,5 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: constantRouters
 })
-
 permission(router)
-
-console.info(router)
 export default router
