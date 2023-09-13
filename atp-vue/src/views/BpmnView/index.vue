@@ -72,9 +72,10 @@ onMounted(() => {
   width: 100%;
   .modelerView-button {
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 30px;
     display: flex;
     align-items: center;
+    gap: 10px;
   }
   .main-content {
     display: flex;
