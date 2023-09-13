@@ -23,6 +23,9 @@ dependencies:
   bpmn-js-properties-panel:
     specifier: ^5.2.0
     version: 5.2.0(@bpmn-io/properties-panel@3.5.0)(bpmn-js@14.0.0)(camunda-bpmn-js-behaviors@1.0.0)(diagram-js@12.3.0)(preact@10.17.1)
+  camunda-bpmn-moddle:
+    specifier: ^7.0.1
+    version: 7.0.1
   diagram-js:
     specifier: ^12.3.0
     version: 12.3.0

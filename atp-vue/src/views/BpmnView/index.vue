@@ -13,7 +13,9 @@ import type { BaseResponse } from '@/types/public/BaseVo'
 import Translate from '@/components/bpmn/additionalModules/Translate'
 import { downloadFile, setEncoded } from '@/utils/files'
 
-import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule } from 'bpmn-js-properties-panel';
+import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule,CamundaPlatformPropertiesProviderModule } from 'bpmn-js-properties-panel';
+
+import CamundaExtensionModule from 'camunda-bpmn-moddle/resources/camunda.json'
 
 let modeler: BpmnModeler
 
@@ -22,10 +24,11 @@ const panel = ref<HTMLDivElement | null > (null)
 const initModeler = () => {
   modeler = new BpmnModeler({
     container: canvas.value as HTMLDivElement,
-    additionalModules: [Translate,BpmnPropertiesPanelModule,BpmnPropertiesProviderModule],
+    additionalModules: [Translate,BpmnPropertiesPanelModule,BpmnPropertiesProviderModule,CamundaPlatformPropertiesProviderModule],
     propertiesPanel:{
       parent:panel.value as HTMLDivElement
-    }
+    },
+    moddleExtensions:{'camunda':CamundaExtensionModule}
   })
   queryNewDiagram().then((response: BaseResponse<string>) => {
     modeler.importXML(response.data)
