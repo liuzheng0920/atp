@@ -15,6 +15,15 @@
     },
     "types": ["antd","sass"],
     "noEmit": true,
-    "suppressImplicitAnyIndexErrors": true
+    // 忽略所有的声明文件（ *.d.ts）的类型检查。
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    // 启用所有严格类型检查选项。
+    // 启用 --strict相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict，
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+    "noImplicitAny": false,
+    // 生成相应的 .map文件。
+    "sourceMap": false
   }
 }
