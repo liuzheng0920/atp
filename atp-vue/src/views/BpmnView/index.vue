@@ -7,7 +7,7 @@ import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css'
 import '@bpmn-io/properties-panel/assets/properties-panel.css'
 
 import BpmnModeler from 'bpmn-js/lib/Modeler'
-import { queryNewDiagram } from '@/api/bpmn'
+import {queryNewDiagram, saveBpmnXml} from '@/api/bpmn'
 import { onMounted, ref } from 'vue'
 import type { BaseResponse } from '@/types/public/BaseVo'
 import Translate from '@/components/bpmn/additionalModules/Translate'
@@ -16,6 +16,7 @@ import { downloadFile, setEncoded } from '@/utils/files'
 import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule,CamundaPlatformPropertiesProviderModule } from 'bpmn-js-properties-panel';
 
 import CamundaExtensionModule from 'camunda-bpmn-moddle/resources/camunda.json'
+import type {SaveBpmnXmlVo} from "@/types/bpmn/SaveBpmnXmlVo";
 
 let modeler: BpmnModeler
 
@@ -47,8 +48,20 @@ const exportSvg = async () => {
   downloadFile(href, filename)
 }
 
+const saveXml = async () => {
+  const { xml } = await modeler.saveXML({})
+  const data:SaveBpmnXmlVo = {
+    xmlStr:xml,
+    resourceName:"测试流程控制"
+  }
+  saveBpmnXml(data).then(response => {
+    console.log(response);
+  })
+}
+
 onMounted(() => {
   initModeler()
+
 })
 </script>
 
@@ -57,6 +70,8 @@ onMounted(() => {
     <div class="modelerView-button">
       <a-button type="primary" @click="exportXml">导出Xml</a-button>
       <a-button type="primary" @click="exportSvg">导出Svg</a-button>
+      <a-button type="primary" @click="saveXml">保存Xml</a-button>
+
     </div>
     <div class="main-content">
       <div class="canvas" ref="canvas"></div>

@@ -1,8 +1,9 @@
 
 // 导出Request类，可以用来自定义传递配置来创建实例
 import type {AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig} from "axios";
-import axios from "axios";
+import axios, {AxiosHeaders} from "axios";
 import type {BaseResponse} from "@/types/public/BaseVo";
+import * as querystring from "querystring";
 
 export class Request {
   // axios 实例
@@ -68,6 +69,20 @@ export class Request {
     config?: AxiosRequestConfig
   ): Promise<AxiosResponse<BaseResponse<T>>> {
     return this.instance.post(url, data, config);
+  }
+
+  public postFormDate<T = any>( url: string,
+                                data?: any,
+                                config?: AxiosRequestConfig):Promise<AxiosResponse<BaseResponse<T>>> {
+    const defaultConfig:AxiosRequestConfig = {
+      headers: {
+          "Content-Type":"application/x-www-form-urlencoded"
+      },
+    }
+
+    const searchParams = new URLSearchParams(data)
+
+    return this.instance.post(url, searchParams, {...defaultConfig,...config});
   }
 
   public put<T = any>(
