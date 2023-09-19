@@ -5,8 +5,8 @@ const languages = {
 }
 
 export function customTranslate(template: string, replacements?: Record<string, string>){
+  replacements = replacements ?? {}
   const translations = languages['zh_CN']
-
   template = translations.elements[template] || template
   return template.replace(/{([^}]+)}/g, function (_, key) {
     return replacements![key] || '{' + key + '}'
