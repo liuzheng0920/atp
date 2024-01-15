@@ -1,4 +1,4 @@
 export type SaveBpmnXmlVo = {
-  resourceName:string|undefined;
-  xmlStr:string;
+  resourceName?:string;
+  xmlStr?:string;
 }

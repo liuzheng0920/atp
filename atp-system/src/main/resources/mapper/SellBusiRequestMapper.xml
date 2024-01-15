@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwlve.atp.sell.dao.SellBusiRequestMapper">
+  <resultMap id="BaseResultMap" type="com.lwlve.atp.sell.model.SellBusiRequest">
+    <!--@mbg.generated-->
+    <!--@Table sell_busi_request-->
+    <id column="REQUEST_ID" jdbcType="VARCHAR" property="requestId" />
+    <result column="AGENCY_CODE" jdbcType="VARCHAR" property="agencyCode" />
+    <result column="REQUEST_CODE" jdbcType="VARCHAR" property="requestCode" />
+    <result column="BUSI_CODE" jdbcType="VARCHAR" property="busiCode" />
+    <result column="BUSI_NAME" jdbcType="VARCHAR" property="busiName" />
+    <result column="FILE_TYPE" jdbcType="VARCHAR" property="fileType" />
+    <result column="USESTATE" jdbcType="INTEGER" property="usestate" />
+    <result column="INPUT_USER" jdbcType="VARCHAR" property="inputUser" />
+    <result column="INPUT_TIME" jdbcType="TIMESTAMP" property="inputTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    REQUEST_ID, AGENCY_CODE, REQUEST_CODE, BUSI_CODE, BUSI_NAME, FILE_TYPE, USESTATE, 
+    INPUT_USER, INPUT_TIME, UPDATE_USER, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sell_busi_request
+    where REQUEST_ID = #{requestId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from sell_busi_request
+    where REQUEST_ID = #{requestId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lwlve.atp.sell.model.SellBusiRequest">
+    <!--@mbg.generated-->
+    insert into sell_busi_request (REQUEST_ID, AGENCY_CODE, REQUEST_CODE, 
+      BUSI_CODE, BUSI_NAME, FILE_TYPE, 
+      USESTATE, INPUT_USER, INPUT_TIME, 
+      UPDATE_USER, UPDATE_TIME)
+    values (#{requestId,jdbcType=VARCHAR}, #{agencyCode,jdbcType=VARCHAR}, #{requestCode,jdbcType=VARCHAR}, 
+      #{busiCode,jdbcType=VARCHAR}, #{busiName,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR}, 
+      #{usestate,jdbcType=INTEGER}, #{inputUser,jdbcType=VARCHAR}, #{inputTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lwlve.atp.sell.model.SellBusiRequest">
+    <!--@mbg.generated-->
+    insert into sell_busi_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="requestId != null">
+        REQUEST_ID,
+      </if>
+      <if test="agencyCode != null">
+        AGENCY_CODE,
+      </if>
+      <if test="requestCode != null">
+        REQUEST_CODE,
+      </if>
+      <if test="busiCode != null">
+        BUSI_CODE,
+      </if>
+      <if test="busiName != null">
+        BUSI_NAME,
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE,
+      </if>
+      <if test="usestate != null">
+        USESTATE,
+      </if>
+      <if test="inputUser != null">
+        INPUT_USER,
+      </if>
+      <if test="inputTime != null">
+        INPUT_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="requestId != null">
+        #{requestId,jdbcType=VARCHAR},
+      </if>
+      <if test="agencyCode != null">
+        #{agencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="requestCode != null">
+        #{requestCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiCode != null">
+        #{busiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiName != null">
+        #{busiName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        #{fileType,jdbcType=VARCHAR},
+      </if>
+      <if test="usestate != null">
+        #{usestate,jdbcType=INTEGER},
+      </if>
+      <if test="inputUser != null">
+        #{inputUser,jdbcType=VARCHAR},
+      </if>
+      <if test="inputTime != null">
+        #{inputTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lwlve.atp.sell.model.SellBusiRequest">
+    <!--@mbg.generated-->
+    update sell_busi_request
+    <set>
+      <if test="agencyCode != null">
+        AGENCY_CODE = #{agencyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="requestCode != null">
+        REQUEST_CODE = #{requestCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiCode != null">
+        BUSI_CODE = #{busiCode,jdbcType=VARCHAR},
+      </if>
+      <if test="busiName != null">
+        BUSI_NAME = #{busiName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE = #{fileType,jdbcType=VARCHAR},
+      </if>
+      <if test="usestate != null">
+        USESTATE = #{usestate,jdbcType=INTEGER},
+      </if>
+      <if test="inputUser != null">
+        INPUT_USER = #{inputUser,jdbcType=VARCHAR},
+      </if>
+      <if test="inputTime != null">
+        INPUT_TIME = #{inputTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where REQUEST_ID = #{requestId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lwlve.atp.sell.model.SellBusiRequest">
+    <!--@mbg.generated-->
+    update sell_busi_request
+    set AGENCY_CODE = #{agencyCode,jdbcType=VARCHAR},
+      REQUEST_CODE = #{requestCode,jdbcType=VARCHAR},
+      BUSI_CODE = #{busiCode,jdbcType=VARCHAR},
+      BUSI_NAME = #{busiName,jdbcType=VARCHAR},
+      FILE_TYPE = #{fileType,jdbcType=VARCHAR},
+      USESTATE = #{usestate,jdbcType=INTEGER},
+      INPUT_USER = #{inputUser,jdbcType=VARCHAR},
+      INPUT_TIME = #{inputTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where REQUEST_ID = #{requestId,jdbcType=VARCHAR}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into sell_busi_request
+    (REQUEST_ID, AGENCY_CODE, REQUEST_CODE, BUSI_CODE, BUSI_NAME, FILE_TYPE, USESTATE, 
+      INPUT_USER, INPUT_TIME, UPDATE_USER, UPDATE_TIME)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.requestId,jdbcType=VARCHAR}, #{item.agencyCode,jdbcType=VARCHAR}, #{item.requestCode,jdbcType=VARCHAR}, 
+        #{item.busiCode,jdbcType=VARCHAR}, #{item.busiName,jdbcType=VARCHAR}, #{item.fileType,jdbcType=VARCHAR}, 
+        #{item.usestate,jdbcType=INTEGER}, #{item.inputUser,jdbcType=VARCHAR}, #{item.inputTime,jdbcType=TIMESTAMP}, 
+        #{item.updateUser,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+</mapper>

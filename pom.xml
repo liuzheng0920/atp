@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
   <modules>
+    <module>atp-core</module>
     <module>atp-system</module>
     <module>atp-work-flow</module>
-    <module>atp-core</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -21,6 +21,8 @@
   <description>atp</description>
   <properties>
     <java.version>17</java.version>
+    <atp-core.version>0.0.1</atp-core.version>
+    <skipTests>true</skipTests>
   </properties>
   <dependencies>
     <dependency>

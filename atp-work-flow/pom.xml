@@ -29,7 +29,7 @@
       <dependency>
         <groupId>com.lwlve</groupId>
         <artifactId>atp-core</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${atp-core.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>

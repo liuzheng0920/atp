@@ -7,3 +7,9 @@ spring:
     name: atp-system
   profiles:
     active: dev
+
+
+mybatis:
+  mapper-locations: 'classpath*:mapper/*.xml'
+
+

@@ -7,6 +7,20 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>atp-core</artifactId>
-  <name>Archetype - atp-core</name>
+  <packaging>jar</packaging>
+  <name>atp-core</name>
   <url>http://maven.apache.org</url>
+  <version>${atp-core.version}</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <classifier>exec</classifier>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
