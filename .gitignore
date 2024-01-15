@@ -34,5 +34,6 @@ build/
 
 **/resources/config/*.yml
 
+.fastRequest
 
 components.d.ts
