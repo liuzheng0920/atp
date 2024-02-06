@@ -11,11 +11,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <camunda-bpm-spring-boot-starter.version>7.20.0-alpha4</camunda-bpm-spring-boot-starter.version>
+    <camunda-bpm-spring-boot-starter.version>7.20.0</camunda-bpm-spring-boot-starter.version>
   </properties>
   
     <dependencies>
-
       <dependency>
         <groupId>org.camunda.bpm.springboot</groupId>
         <artifactId>camunda-bpm-spring-boot-starter</artifactId>
