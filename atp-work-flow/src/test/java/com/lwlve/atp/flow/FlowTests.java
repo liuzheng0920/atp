@@ -36,8 +36,6 @@ public class FlowTests {
     public void findDqjd(){
         List<Execution> list = runtimeService.createExecutionQuery().processInstanceBusinessKey("lcslbh001").list();
         list.forEach(execution -> log.info(execution.toString()));
-
-        runtimeService.getActiveActivityIds("");
     }
 
 }

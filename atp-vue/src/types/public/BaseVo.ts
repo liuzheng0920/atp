@@ -1,5 +1,5 @@
-export interface BaseResponse<D>{
-  code:string,
-  message:string|null|undefined,
-  data:D
+export interface BaseResponse<D> {
+  code: string
+  message: string | null | undefined
+  data: D
 }

@@ -1,10 +1,10 @@
-import zh_CN from "@/i18n/zh_CN";
+import zh_CN from '@/i18n/zh_CN'
 
 const languages = {
   zh_CN
 }
 
-export function customTranslate(template: string, replacements?: Record<string, string>){
+export function customTranslate(template: string, replacements?: Record<string, string>) {
   replacements = replacements ?? {}
   const translations = languages['zh_CN']
   template = translations.elements[template] || template

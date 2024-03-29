@@ -1,17 +1,16 @@
 import { defineStore } from 'pinia'
-import type {BaseMenuInfo, MenuStore} from '@/types/system/MenuVo'
+import type { BaseMenuInfo, MenuStore } from '@/types/system/MenuVo'
 import { queryMenuList } from '@/api/menu'
 import { generatorRouter } from '@/utils/parsingRouter'
 
 const state: MenuStore = {
   menuInfos: [],
-  menuId:undefined
-
+  menuId: undefined
 }
 export default defineStore('system.menu', {
   state: () => state,
   getters: {
-    getMenuInfos(state):BaseMenuInfo[]|undefined{
+    getMenuInfos(state): BaseMenuInfo[] | undefined {
       return state.menuInfos
     }
   },
